@@ -1,0 +1,232 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: JetBrainsMonoNerdFont;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: #282828;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border: 1px solid #fe8019;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+    background-color: #a37800;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ffffff;
+    margin: 4px 0;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    border: 1px solid #fe8019;
+    background: #3c3836;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 10px;
+    color: #ffffff;
+    margin: 4px 0px;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    background-color: #504945;
+}
+
+#battery {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#battery.charging, #battery.plugged {
+    color: #3b2e25;
+    background-color: #fb4934;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    background-color: #f53c3c;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: #2ecc71;
+    color: #000000;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    background-color: #2ecc71;
+    color: #000000;
+}
+
+#memory {
+    background-color: #9b59b6;
+}
+
+#disk {
+    background-color: #964B00;
+}
+
+#backlight {
+    background-color: #90b1b1;
+}
+
+#network {
+    background-color: #2980b9;
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
+#pulseaudio {
+    background-color: #f1c40f;
+    color: #000000;
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+
+#wireplumber {
+    background-color: #ff904a;
+    color: #202020;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+    color: #202020;
+}
+
+#tray {
+    background-color: #458588;
+    margin-right: 4px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#language {
+    padding: 0 10px;
+    min-width: 16px;
+    background-color: #ff904a;
+    color: #202020;
+    margin: 4px 0;
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
