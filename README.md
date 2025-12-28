@@ -12,3 +12,5 @@ mv ./* ~/.config/
 ```
 
 3. enjoy using it (it's designed for me, so you'll probably have a bad time)
+
+btw i hardcoded in some values, so it won't work on every type of display
