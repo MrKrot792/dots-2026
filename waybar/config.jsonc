@@ -18,7 +18,8 @@
         "wireplumber",
         "sway/language",
         "battery",
-        "clock",
+        "clock#time",
+        "clock#date",
         "tray",
     ],
     "sway/mode": {
@@ -34,9 +35,9 @@
         "icon-size": 20,
         "spacing": 5,
     },
-    "clock": {
+    "clock#date": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%Y-%m-%d}",
     },
     "battery": {
         "states": {
